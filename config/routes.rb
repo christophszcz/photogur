@@ -1,5 +1,7 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   get 'pictures' => 'pictures#index'
+  get 'pictures/:id' => 'pictures#show', as: 'picture'
+end
 
   # Ignore the comments below for now
   # They are just documentation
@@ -58,6 +60,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
 
  
