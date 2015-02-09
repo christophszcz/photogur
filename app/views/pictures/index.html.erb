@@ -1,9 +1,25 @@
-<h1>Most recent pictures</h1>
+<h1>Most Recent Pictures</h1>
 <ul>
   <% @pictures.each do |picture| %>
     <li><%= picture.title %></li>
    <%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %> 
    <% end %>
+</ul>
+
+<h2>Pictures That Have Existed For 1 Month or More
+	(<%= Picture.created_before(1.month.ago).count %>)
+</h2>
+
+<ul>
+  <% @older_than_1month.each do |picture| %>
+		<li><%= picture.title %></li>
+   <%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %> 
+	</li>
+  <% end %>
+
+  <% if @older_than_1month.blank? %>
+	 	<p>We apologize for the inconvenience. There aren't any pictures that are older than 1 month</p>
+	<% end %>
 </ul>
 
 
