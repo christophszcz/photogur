@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   root 'pictures#index'
   
   resources :pictures
-  post 'pictures' => "pictures#create"
+  # post 'pictures' => "pictures#create"
 
-  get 'pictures' => 'pictures#index'
-  get 'pictures/new' => 'pictures#new'
-  get 'pictures/:id/edit' => 'pictures#edit', as: 'edit_picture'
-  get 'pictures/:id' => 'pictures#show', as: 'picture'
+  # get 'pictures' => 'pictures#index'
+  # get 'pictures/new' => 'pictures#new'
+  # get 'pictures/:id/edit' => 'pictures#edit', as: 'edit_picture'
+  # get 'pictures/:id' => 'pictures#show', as: 'picture'
 
 end
 
